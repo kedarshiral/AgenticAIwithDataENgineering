@@ -1,0 +1,11 @@
+{
+    "datasets": {
+        "table_name": "datasets",
+        "layer": null,
+        "domain": null,
+        "owner": "Retail Data Engineering",
+        "upstream": [],
+        "downstream": [],
+        "transformation": null
+    }
+}
