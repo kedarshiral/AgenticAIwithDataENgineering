@@ -172,7 +172,7 @@ with DAG(
 
         git add .
 
-        git commit -m "Auto refresh {time}" || true
+        git commit -m "Auto refresh {time}"
 
         git push
         """

@@ -1,0 +1,23 @@
+[2026-06-27T05:56:07.135+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-27T05:56:07.143+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: retail_pipeline.l1_to_l2 manual__2026-06-27T05:55:51.348675+00:00 [queued]>
+[2026-06-27T05:56:07.210+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: retail_pipeline.l1_to_l2 manual__2026-06-27T05:55:51.348675+00:00 [queued]>
+[2026-06-27T05:56:07.210+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-06-27T05:56:07.216+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): l1_to_l2> on 2026-06-27 05:55:51.348675+00:00
+[2026-06-27T05:56:07.219+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=700) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-27T05:56:07.219+0000] {standard_task_runner.py:72} INFO - Started process 701 to run task
+[2026-06-27T05:56:07.220+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'retail_pipeline', 'l1_to_l2', 'manual__2026-06-27T05:55:51.348675+00:00', '--job-id', '92', '--raw', '--subdir', 'DAGS_FOLDER/retail_pipeline.py', '--cfg-path', '/tmp/tmp4w5vhbu2']
+[2026-06-27T05:56:07.221+0000] {standard_task_runner.py:105} INFO - Job 92: Subtask l1_to_l2
+[2026-06-27T05:56:07.234+0000] {task_command.py:467} INFO - Running <TaskInstance: retail_pipeline.l1_to_l2 manual__2026-06-27T05:55:51.348675+00:00 [running]> on host 899574ac88f6
+[2026-06-27T05:56:07.256+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='retail_pipeline' AIRFLOW_CTX_TASK_ID='l1_to_l2' AIRFLOW_CTX_EXECUTION_DATE='2026-06-27T05:55:51.348675+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-27T05:55:51.348675+00:00'
+[2026-06-27T05:56:07.257+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-06-27T05:56:07.262+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-06-27T05:56:07.262+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/AgenticAIwithDataENgineering/retail-lakehouse-platform &&\n        python -m scripts.run_l1_to_l2\n        ']
+[2026-06-27T05:56:07.265+0000] {subprocess.py:99} INFO - Output:
+[2026-06-27T05:56:07.591+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-06-27T05:56:07.600+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-06-27T05:56:07.600+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=retail_pipeline, task_id=l1_to_l2, run_id=manual__2026-06-27T05:55:51.348675+00:00, execution_date=20260627T055551, start_date=20260627T055607, end_date=20260627T055607
+[2026-06-27T05:56:07.649+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-06-27T05:56:07.658+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-27T05:56:07.659+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
