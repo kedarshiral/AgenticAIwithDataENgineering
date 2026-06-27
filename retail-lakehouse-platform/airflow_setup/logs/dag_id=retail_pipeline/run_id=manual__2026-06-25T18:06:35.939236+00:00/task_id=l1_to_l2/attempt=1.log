@@ -1,0 +1,45 @@
+[2026-06-25T18:06:55.650+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-25T18:06:55.657+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: retail_pipeline.l1_to_l2 manual__2026-06-25T18:06:35.939236+00:00 [queued]>
+[2026-06-25T18:06:55.713+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: retail_pipeline.l1_to_l2 manual__2026-06-25T18:06:35.939236+00:00 [queued]>
+[2026-06-25T18:06:55.713+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-06-25T18:06:55.717+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): l1_to_l2> on 2026-06-25 18:06:35.939236+00:00
+[2026-06-25T18:06:55.719+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=263) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-25T18:06:55.719+0000] {standard_task_runner.py:72} INFO - Started process 264 to run task
+[2026-06-25T18:06:55.720+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'retail_pipeline', 'l1_to_l2', 'manual__2026-06-25T18:06:35.939236+00:00', '--job-id', '65', '--raw', '--subdir', 'DAGS_FOLDER/retail_pipeline.py', '--cfg-path', '/tmp/tmpcf4ulavb']
+[2026-06-25T18:06:55.720+0000] {standard_task_runner.py:105} INFO - Job 65: Subtask l1_to_l2
+[2026-06-25T18:06:55.733+0000] {task_command.py:467} INFO - Running <TaskInstance: retail_pipeline.l1_to_l2 manual__2026-06-25T18:06:35.939236+00:00 [running]> on host a41ee0ee9f64
+[2026-06-25T18:06:55.752+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='retail_pipeline' AIRFLOW_CTX_TASK_ID='l1_to_l2' AIRFLOW_CTX_EXECUTION_DATE='2026-06-25T18:06:35.939236+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-25T18:06:35.939236+00:00'
+[2026-06-25T18:06:55.753+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-06-25T18:06:55.757+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-06-25T18:06:55.758+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n    cd /opt/AgenticAIwithDataENgineering/retail-lakehouse-platform &&\n    python -m scripts.run_l1_to_l2\n    ']
+[2026-06-25T18:06:55.760+0000] {subprocess.py:99} INFO - Output:
+[2026-06-25T18:06:56.702+0000] {subprocess.py:106} INFO - L2 Created: customers
+[2026-06-25T18:06:56.703+0000] {subprocess.py:106} INFO - L2 Created: payments
+[2026-06-25T18:06:56.703+0000] {subprocess.py:106} INFO - L2 Created: ledger
+[2026-06-25T18:06:56.703+0000] {subprocess.py:106} INFO - L2 Created: warehouses
+[2026-06-25T18:06:56.703+0000] {subprocess.py:106} INFO - L2 Created: products
+[2026-06-25T18:06:56.703+0000] {subprocess.py:106} INFO - L2 Created: suppliers
+[2026-06-25T18:06:56.703+0000] {subprocess.py:106} INFO - L2 Created: invoices
+[2026-06-25T18:06:56.703+0000] {subprocess.py:106} INFO - L2 Created: brands
+[2026-06-25T18:06:56.703+0000] {subprocess.py:106} INFO - L2 Created: email_events
+[2026-06-25T18:06:56.704+0000] {subprocess.py:106} INFO - L2 Created: tax
+[2026-06-25T18:06:56.704+0000] {subprocess.py:106} INFO - L2 Created: order_items
+[2026-06-25T18:06:56.704+0000] {subprocess.py:106} INFO - L2 Created: inventory
+[2026-06-25T18:06:56.704+0000] {subprocess.py:106} INFO - L2 Created: stock_movements
+[2026-06-25T18:06:56.704+0000] {subprocess.py:106} INFO - L2 Created: refunds
+[2026-06-25T18:06:56.704+0000] {subprocess.py:106} INFO - L2 Created: customer_addresses
+[2026-06-25T18:06:56.704+0000] {subprocess.py:106} INFO - L2 Created: campaigns
+[2026-06-25T18:06:56.704+0000] {subprocess.py:106} INFO - L2 Created: returns
+[2026-06-25T18:06:56.704+0000] {subprocess.py:106} INFO - L2 Created: orders
+[2026-06-25T18:06:56.704+0000] {subprocess.py:106} INFO - L2 Created: impressions
+[2026-06-25T18:06:56.704+0000] {subprocess.py:106} INFO - L2 Created: categories
+[2026-06-25T18:06:56.704+0000] {subprocess.py:106} INFO - L2 Created: customer_segments
+[2026-06-25T18:06:56.705+0000] {subprocess.py:106} INFO - L2 Created: clicks
+[2026-06-25T18:06:56.728+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-06-25T18:06:56.739+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-06-25T18:06:56.739+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=retail_pipeline, task_id=l1_to_l2, run_id=manual__2026-06-25T18:06:35.939236+00:00, execution_date=20260625T180635, start_date=20260625T180655, end_date=20260625T180656
+[2026-06-25T18:06:56.762+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-06-25T18:06:56.773+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-25T18:06:56.774+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,217 @@
+tables:
+
+  # ======================================
+  # CUSTOMER DOMAIN
+  # ======================================
+
+  customers:
+    domain: customer
+    format: json
+    primary_key: customer_id
+    rows_initial: 5000
+    rows_daily_increment: 100
+
+  customer_addresses:
+    domain: customer
+    format: json
+    primary_key: address_id
+    foreign_keys:
+      customer_id: customers.customer_id
+    rows_initial: 5000
+    rows_daily_increment: 100
+
+  customer_segments:
+    domain: customer
+    format: json
+    primary_key: segment_id
+    foreign_keys:
+      customer_id: customers.customer_id
+    rows_initial: 5000
+    rows_daily_increment: 100
+
+  # ======================================
+  # PRODUCT DOMAIN
+  # ======================================
+
+  brands:
+    domain: product
+    format: parquet
+    primary_key: brand_id
+    rows_initial: 50
+    rows_daily_increment: 0
+
+  categories:
+    domain: product
+    format: parquet
+    primary_key: category_id
+    rows_initial: 20
+    rows_daily_increment: 0
+
+  suppliers:
+    domain: product
+    format: parquet
+    primary_key: supplier_id
+    rows_initial: 100
+    rows_daily_increment: 1
+
+  products:
+    domain: product
+    format: parquet
+    primary_key: product_id
+    foreign_keys:
+      brand_id: brands.brand_id
+      category_id: categories.category_id
+      supplier_id: suppliers.supplier_id
+    rows_initial: 1000
+    rows_daily_increment: 20
+
+  # ======================================
+  # INVENTORY DOMAIN
+  # ======================================
+
+  warehouses:
+    domain: inventory
+    format: csv
+    primary_key: warehouse_id
+    rows_initial: 10
+    rows_daily_increment: 0
+
+  inventory:
+    domain: inventory
+    format: csv
+    primary_key: inventory_id
+    foreign_keys:
+      warehouse_id: warehouses.warehouse_id
+      product_id: products.product_id
+    rows_initial: 1000
+    rows_daily_increment: 50
+
+  stock_movements:
+    domain: inventory
+    format: csv
+    primary_key: movement_id
+    foreign_keys:
+      product_id: products.product_id
+    rows_initial: 10000
+    rows_daily_increment: 500
+
+  # ======================================
+  # MARKETING DOMAIN
+  # ======================================
+
+  campaigns:
+    domain: marketing
+    format: json
+    primary_key: campaign_id
+    rows_initial: 50
+    rows_daily_increment: 2
+
+  impressions:
+    domain: marketing
+    format: csv
+    primary_key: impression_id
+    foreign_keys:
+      campaign_id: campaigns.campaign_id
+      customer_id: customers.customer_id
+    rows_initial: 100000
+    rows_daily_increment: 5000
+
+  clicks:
+    domain: marketing
+    format: csv
+    primary_key: click_id
+    foreign_keys:
+      campaign_id: campaigns.campaign_id
+      customer_id: customers.customer_id
+    rows_initial: 25000
+    rows_daily_increment: 1000
+
+  email_events:
+    domain: marketing
+    format: json
+    primary_key: event_id
+    foreign_keys:
+      campaign_id: campaigns.campaign_id
+      customer_id: customers.customer_id
+    rows_initial: 25000
+    rows_daily_increment: 1000
+
+  # ======================================
+  # ORDER DOMAIN
+  # ======================================
+
+  orders:
+    domain: sales
+    format: csv
+    primary_key: order_id
+    foreign_keys:
+      customer_id: customers.customer_id
+      campaign_id: campaigns.campaign_id
+    rows_initial: 25000
+    rows_daily_increment: 1000
+
+  order_items:
+    domain: sales
+    format: csv
+    primary_key: order_item_id
+    foreign_keys:
+      order_id: orders.order_id
+      product_id: products.product_id
+    rows_initial: 80000
+    rows_daily_increment: 3000
+
+  payments:
+    domain: sales
+    format: csv
+    primary_key: payment_id
+    foreign_keys:
+      order_id: orders.order_id
+    rows_initial: 25000
+    rows_daily_increment: 1000
+
+  returns:
+    domain: sales
+    format: csv
+    primary_key: return_id
+    foreign_keys:
+      order_id: orders.order_id
+    rows_initial: 1000
+    rows_daily_increment: 20
+
+  # ======================================
+  # FINANCE DOMAIN
+  # ======================================
+
+  invoices:
+    domain: finance
+    format: parquet
+    primary_key: invoice_id
+    foreign_keys:
+      order_id: orders.order_id
+    rows_initial: 25000
+    rows_daily_increment: 1000
+
+  refunds:
+    domain: finance
+    format: parquet
+    primary_key: refund_id
+    foreign_keys:
+      order_id: orders.order_id
+    rows_initial: 1000
+    rows_daily_increment: 20
+
+  tax:
+    domain: finance
+    format: parquet
+    primary_key: tax_id
+    foreign_keys:
+      order_id: orders.order_id
+    rows_initial: 25000
+    rows_daily_increment: 1000
+
+  ledger:
+    domain: finance
+    format: parquet
+    primary_key: ledger_id
+    rows_initial: 50000
+    rows_daily_increment: 2000

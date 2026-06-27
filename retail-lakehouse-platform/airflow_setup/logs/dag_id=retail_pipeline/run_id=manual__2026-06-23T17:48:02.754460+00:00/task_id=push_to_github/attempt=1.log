@@ -1,0 +1,103 @@
+[2026-06-23T17:48:08.534+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-23T17:48:08.540+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: retail_pipeline.push_to_github manual__2026-06-23T17:48:02.754460+00:00 [queued]>
+[2026-06-23T17:48:08.602+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: retail_pipeline.push_to_github manual__2026-06-23T17:48:02.754460+00:00 [queued]>
+[2026-06-23T17:48:08.602+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-06-23T17:48:08.606+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): push_to_github> on 2026-06-23 17:48:02.754460+00:00
+[2026-06-23T17:48:08.608+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=299) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-23T17:48:08.609+0000] {standard_task_runner.py:72} INFO - Started process 300 to run task
+[2026-06-23T17:48:08.609+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'retail_pipeline', 'push_to_github', 'manual__2026-06-23T17:48:02.754460+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/retail_pipeline.py', '--cfg-path', '/tmp/tmpi5ep4sf1']
+[2026-06-23T17:48:08.610+0000] {standard_task_runner.py:105} INFO - Job 32: Subtask push_to_github
+[2026-06-23T17:48:08.623+0000] {task_command.py:467} INFO - Running <TaskInstance: retail_pipeline.push_to_github manual__2026-06-23T17:48:02.754460+00:00 [running]> on host b512ffa9ca64
+[2026-06-23T17:48:08.645+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='retail_pipeline' AIRFLOW_CTX_TASK_ID='push_to_github' AIRFLOW_CTX_EXECUTION_DATE='2026-06-23T17:48:02.754460+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-23T17:48:02.754460+00:00'
+[2026-06-23T17:48:08.645+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-06-23T17:48:08.650+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-06-23T17:48:08.650+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/AgenticAIwithDataENgineering\n\n        git add .\n\n        git commit -m "Auto refresh 2026-06-23 17:48:08.474986"\n\n        git push\n        ']
+[2026-06-23T17:48:08.654+0000] {subprocess.py:99} INFO - Output:
+[2026-06-23T17:48:20.532+0000] {subprocess.py:106} INFO - Author identity unknown
+[2026-06-23T17:48:20.533+0000] {subprocess.py:106} INFO - 
+[2026-06-23T17:48:20.533+0000] {subprocess.py:106} INFO - *** Please tell me who you are.
+[2026-06-23T17:48:20.534+0000] {subprocess.py:106} INFO - 
+[2026-06-23T17:48:20.534+0000] {subprocess.py:106} INFO - Run
+[2026-06-23T17:48:20.534+0000] {subprocess.py:106} INFO - 
+[2026-06-23T17:48:20.534+0000] {subprocess.py:106} INFO -   git config --global user.email "you@example.com"
+[2026-06-23T17:48:20.534+0000] {subprocess.py:106} INFO -   git config --global user.name "Your Name"
+[2026-06-23T17:48:20.535+0000] {subprocess.py:106} INFO - 
+[2026-06-23T17:48:20.535+0000] {subprocess.py:106} INFO - to set your account's default identity.
+[2026-06-23T17:48:20.535+0000] {subprocess.py:106} INFO - Omit --global to set the identity only in this repository.
+[2026-06-23T17:48:20.535+0000] {subprocess.py:106} INFO - 
+[2026-06-23T17:48:20.535+0000] {subprocess.py:106} INFO - fatal: unable to auto-detect email address (got '***@b512ffa9ca64.(none)')
+[2026-06-23T17:48:20.828+0000] {subprocess.py:106} INFO - fatal: could not read Username for 'https://github.com': No such device or address
+[2026-06-23T17:48:20.832+0000] {subprocess.py:110} INFO - Command exited with return code 128
+[2026-06-23T17:48:20.852+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 128.
+[2026-06-23T17:48:20.856+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=retail_pipeline, task_id=push_to_github, run_id=manual__2026-06-23T17:48:02.754460+00:00, execution_date=20260623T174802, start_date=20260623T174808, end_date=20260623T174820
+[2026-06-23T17:48:20.875+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-06-23T17:48:20.876+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 32 for task push_to_github (Bash command failed. The command returned a non-zero exit code 128.; 300)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 128.
+[2026-06-23T17:48:20.910+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-06-23T17:48:20.921+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-23T17:48:20.922+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

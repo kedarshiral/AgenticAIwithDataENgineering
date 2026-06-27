@@ -1,0 +1,384 @@
+sources:
+
+  # ==================================================
+  # CUSTOMER DOMAIN (External CRM)
+  # ==================================================
+
+  customers:
+
+    source_system: crm
+
+    source_type: file
+
+    storage_type: github
+
+    format: json
+
+    load_type: full
+
+    refresh_frequency: daily
+
+    file_name: customers.json
+    url: https://raw.githubusercontent.com/kedarshiral/AgenticAIwithDataENgineering/refs/heads/main/retail-lakehouse-platform/data/source_github/customers.json
+
+  customer_addresses:
+
+    source_system: crm
+
+    source_type: file
+
+    storage_type: github
+    format: json
+
+    load_type: full
+
+    refresh_frequency: daily
+
+    file_name: customer_addresses.json
+    url: https://raw.githubusercontent.com/kedarshiral/AgenticAIwithDataENgineering/refs/heads/main/retail-lakehouse-platform/data/source_github/customer_addresses.json
+  customer_segments:
+
+    source_system: crm
+
+    source_type: file
+
+    storage_type: github
+
+    format: json
+
+    load_type: full
+
+    refresh_frequency: daily
+
+    file_name: customer_segments.json
+    url: https://raw.githubusercontent.com/kedarshiral/AgenticAIwithDataENgineering/refs/heads/main/retail-lakehouse-platform/data/source_github/customer_segments.json
+
+  # ==================================================
+  # PRODUCT MASTER (Internal MDM)
+  # ==================================================
+
+  brands:
+
+    source_system: product_master
+
+    source_type: file
+
+    storage_type: local
+
+    format: parquet
+
+    load_type: full
+
+    refresh_frequency: weekly
+
+    file_name: brands.parquet
+
+  categories:
+
+    source_system: product_master
+
+    source_type: file
+
+    storage_type: local
+
+    format: parquet
+
+    load_type: full
+
+    refresh_frequency: weekly
+
+    file_name: categories.parquet
+
+  suppliers:
+
+    source_system: product_master
+
+    source_type: file
+
+    storage_type: local
+
+    format: parquet
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: suppliers.parquet
+
+  products:
+
+    source_system: product_master
+
+    source_type: file
+
+    storage_type: local
+
+    format: parquet
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: products.parquet
+
+  # ==================================================
+  # INVENTORY SYSTEM
+  # ==================================================
+
+  # warehouses:
+
+  #   source_system: inventory
+
+  #   source_type: file
+
+  #   storage_type: local
+
+  #   format: csv
+
+  #   load_type: full
+
+  #   refresh_frequency: weekly
+
+  #   file_name: warehouses.csv
+
+  # inventory:
+
+  #   source_system: inventory
+
+  #   source_type: file
+
+  #   storage_type: github
+
+  #   format: csv
+
+  #   load_type: incremental
+
+  #   refresh_frequency: daily
+
+  #   file_name: inventory.csv
+  #   url: https://raw.githubusercontent.com/kedarshiral/AgenticAIwithDataENgineering/refs/heads/main/retail-lakehouse-platform/data/source_github/inventory.csv
+
+  # stock_movements:
+
+  #   source_system: inventory
+
+  #   source_type: file
+
+  #   storage_type: github
+
+  #   format: csv
+
+  #   load_type: incremental
+
+  #   refresh_frequency: daily
+
+  #   file_name: stock_movements.csv
+  #   url: https://raw.githubusercontent.com/kedarshiral/AgenticAIwithDataENgineering/refs/heads/main/retail-lakehouse-platform/data/source_github/stock_movements.csv
+
+  # ==================================================
+  # MARKETING SYSTEM
+  # ==================================================
+
+  campaigns:
+
+    source_system: marketing
+
+    source_type: file
+
+    storage_type: github
+
+    format: json
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: campaigns.json
+    url: https://raw.githubusercontent.com/kedarshiral/AgenticAIwithDataENgineering/refs/heads/main/retail-lakehouse-platform/data/source_github/campaigns.json
+
+  impressions:
+
+    source_system: marketing
+
+    source_type: file
+
+    storage_type: github
+
+    format: csv
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: impressions.csv
+    url: https://raw.githubusercontent.com/kedarshiral/AgenticAIwithDataENgineering/refs/heads/main/retail-lakehouse-platform/data/source_github/impressions.csv
+
+  clicks:
+
+    source_system: marketing
+
+    source_type: file
+
+    storage_type: github
+
+    format: csv
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: clicks.csv
+    url: https://raw.githubusercontent.com/kedarshiral/AgenticAIwithDataENgineering/refs/heads/main/retail-lakehouse-platform/data/source_github/clicks.csv
+
+  email_events:
+
+    source_system: marketing
+
+    source_type: file
+
+    storage_type: github
+
+    format: json
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: email_events.json
+    url: https://raw.githubusercontent.com/kedarshiral/AgenticAIwithDataENgineering/refs/heads/main/retail-lakehouse-platform/data/source_github/email_events.json
+
+  # ==================================================
+  # ECOMMERCE SYSTEM
+  # ==================================================
+
+  orders:
+
+    source_system: ecommerce
+
+    source_type: file
+
+    storage_type: local
+
+    format: csv
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: orders.csv
+
+  order_items:
+
+    source_system: ecommerce
+
+    source_type: file
+
+    storage_type: local
+
+    format: csv
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: order_items.csv
+
+  payments:
+
+    source_system: ecommerce
+
+    source_type: file
+
+    storage_type: local
+
+    format: csv
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: payments.csv
+
+  returns:
+
+    source_system: ecommerce
+
+    source_type: file
+
+    storage_type: local
+
+    format: csv
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: returns.csv
+
+  # ==================================================
+  # FINANCE SYSTEM
+  # ==================================================
+
+  invoices:
+
+    source_system: finance
+
+    source_type: file
+
+    storage_type: local
+
+    format: parquet
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: invoices.parquet
+
+  refunds:
+
+    source_system: finance
+
+    source_type: file
+
+    storage_type: local
+
+    format: parquet
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: refunds.parquet
+
+  tax:
+
+    source_system: finance
+
+    source_type: file
+
+    storage_type: local
+
+    format: parquet
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: tax.parquet
+
+  ledger:
+
+    source_system: finance
+
+    source_type: file
+
+    storage_type: local
+
+    format: parquet
+
+    load_type: incremental
+
+    refresh_frequency: daily
+
+    file_name: ledger.parquet

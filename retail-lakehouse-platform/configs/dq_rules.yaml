@@ -1,0 +1,207 @@
+tables:
+
+  customers:
+
+    customer_id:
+      not_null: true
+      unique: true
+
+    email:
+      not_null: true
+      regex: '^[^@\s]+@[^@\s]+\.[^@\s]+$'
+
+  customer_addresses:
+
+    address_id:
+      not_null: true
+      unique: true
+
+    customer_id:
+      not_null: true
+      foreign_key:
+        table: customers
+        column: customer_id
+
+  customer_segments:
+
+    segment_id:
+      not_null: true
+      unique: true
+
+    customer_id:
+      not_null: true
+      foreign_key:
+        table: customers
+        column: customer_id
+
+  products:
+
+    product_id:
+      not_null: true
+      unique: true
+
+    brand_id:
+      foreign_key:
+        table: brands
+        column: brand_id
+
+    category_id:
+      foreign_key:
+        table: categories
+        column: category_id
+
+    supplier_id:
+      foreign_key:
+        table: suppliers
+        column: supplier_id
+
+    price:
+      min_value: 0
+
+  inventory:
+
+    inventory_id:
+      unique: true
+
+    product_id:
+      foreign_key:
+        table: products
+        column: product_id
+
+    quantity:
+      min_value: 0
+
+  campaigns:
+
+    campaign_id:
+      unique: true
+
+  orders:
+
+    order_id:
+      unique: true
+      not_null: true
+
+    customer_id:
+      foreign_key:
+        table: customers
+        column: customer_id
+
+    total_amount:
+      min_value: 0
+
+  order_items:
+
+    order_item_id:
+      unique: true
+
+    order_id:
+      foreign_key:
+        table: orders
+        column: order_id
+
+    product_id:
+      foreign_key:
+        table: products
+        column: product_id
+
+    quantity:
+      min_value: 1
+
+  payments:
+
+    payment_id:
+      unique: true
+
+    order_id:
+      foreign_key:
+        table: orders
+        column: order_id
+
+    payment_amount:
+      min_value: 0
+
+  returns:
+
+    return_id:
+      unique: true
+
+    order_id:
+      foreign_key:
+        table: orders
+        column: order_id
+
+  impressions:
+
+    impression_id:
+      unique: true
+
+    campaign_id:
+      foreign_key:
+        table: campaigns
+        column: campaign_id
+
+    customer_id:
+      foreign_key:
+        table: customers
+        column: customer_id
+
+  clicks:
+
+    click_id:
+      unique: true
+
+    campaign_id:
+      foreign_key:
+        table: campaigns
+        column: campaign_id
+
+    customer_id:
+      foreign_key:
+        table: customers
+        column: customer_id
+
+  email_events:
+
+    event_id:
+      unique: true
+
+    campaign_id:
+      foreign_key:
+        table: campaigns
+        column: campaign_id
+
+  invoices:
+
+    invoice_id:
+      unique: true
+
+    order_id:
+      foreign_key:
+        table: orders
+        column: order_id
+
+  refunds:
+
+    refund_id:
+      unique: true
+
+    order_id:
+      foreign_key:
+        table: orders
+        column: order_id
+
+  tax:
+
+    tax_id:
+      unique: true
+
+    order_id:
+      foreign_key:
+        table: orders
+        column: order_id
+
+  ledger:
+
+    ledger_id:
+      unique: true

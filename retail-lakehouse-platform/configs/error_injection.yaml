@@ -1,0 +1,15 @@
+enabled: true
+
+rules:
+
+  null_email:
+    rate: 0.01
+
+  duplicate_customer_id:
+    rate: 0.005
+
+  invalid_order_customer_fk:
+    rate: 0.01
+
+  negative_product_price:
+    rate: 0.005

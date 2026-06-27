@@ -1,0 +1,17 @@
+[2026-06-27T05:44:05.241+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-27T05:44:05.246+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: retail_pipeline.push_to_github manual__2026-06-27T05:44:01.581897+00:00 [queued]>
+[2026-06-27T05:44:05.298+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: retail_pipeline.push_to_github manual__2026-06-27T05:44:01.581897+00:00 [queued]>
+[2026-06-27T05:44:05.298+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-06-27T05:44:05.304+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): push_to_github> on 2026-06-27 05:44:01.581897+00:00
+[2026-06-27T05:44:05.306+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=124) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-27T05:44:05.306+0000] {standard_task_runner.py:72} INFO - Started process 125 to run task
+[2026-06-27T05:44:05.307+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'retail_pipeline', 'push_to_github', 'manual__2026-06-27T05:44:01.581897+00:00', '--job-id', '72', '--raw', '--subdir', 'DAGS_FOLDER/retail_pipeline.py', '--cfg-path', '/tmp/tmpdhr5a8b5']
+[2026-06-27T05:44:05.308+0000] {standard_task_runner.py:105} INFO - Job 72: Subtask push_to_github
+[2026-06-27T05:44:05.319+0000] {task_command.py:467} INFO - Running <TaskInstance: retail_pipeline.push_to_github manual__2026-06-27T05:44:01.581897+00:00 [running]> on host 899574ac88f6
+[2026-06-27T05:44:05.338+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='retail_pipeline' AIRFLOW_CTX_TASK_ID='push_to_github' AIRFLOW_CTX_EXECUTION_DATE='2026-06-27T05:44:01.581897+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-27T05:44:01.581897+00:00'
+[2026-06-27T05:44:05.339+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-06-27T05:44:05.343+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-06-27T05:44:05.344+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/AgenticAIwithDataENgineering\n\n        git add .\n\n        git commit -m "Auto refresh 2026-06-27 05:44:05.186585" || true\n\n        git push\n        ']
+[2026-06-27T05:44:05.346+0000] {subprocess.py:99} INFO - Output:

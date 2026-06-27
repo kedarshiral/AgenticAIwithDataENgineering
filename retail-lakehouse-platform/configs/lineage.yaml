@@ -1,0 +1,223 @@
+datasets:
+
+  # =====================================
+  # CUSTOMER DOMAIN
+  # =====================================
+
+  customers:
+    upstream: []
+
+  customer_addresses:
+    upstream:
+      - customers
+
+  customer_segments:
+    upstream:
+      - customers
+
+  # =====================================
+  # PRODUCT DOMAIN
+  # =====================================
+
+  brands:
+    upstream: []
+
+  categories:
+    upstream: []
+
+  suppliers:
+    upstream: []
+
+  products:
+    upstream:
+      - brands
+      - categories
+      - suppliers
+
+  # =====================================
+  # INVENTORY DOMAIN
+  # =====================================
+
+  warehouses:
+    upstream: []
+
+  inventory:
+    upstream:
+      - warehouses
+      - products
+
+  stock_movements:
+    upstream:
+      - products
+      - warehouses
+
+  # =====================================
+  # MARKETING DOMAIN
+  # =====================================
+
+  campaigns:
+    upstream: []
+
+  impressions:
+    upstream:
+      - campaigns
+      - customers
+
+  clicks:
+    upstream:
+      - campaigns
+      - customers
+      - impressions
+
+  email_events:
+    upstream:
+      - campaigns
+      - customers
+
+  # =====================================
+  # SALES DOMAIN
+  # =====================================
+
+  orders:
+    upstream:
+      - customers
+      - campaigns
+
+  order_items:
+    upstream:
+      - orders
+      - products
+
+  payments:
+    upstream:
+      - orders
+
+  returns:
+    upstream:
+      - orders
+
+  # =====================================
+  # FINANCE DOMAIN
+  # =====================================
+
+  invoices:
+    upstream:
+      - orders
+
+  refunds:
+    upstream:
+      - returns
+
+  tax:
+    upstream:
+      - orders
+
+  ledger:
+    upstream:
+      - invoices
+      - payments
+      - refunds
+
+  # =====================================
+  # L2 CURATED LAYER
+  # =====================================
+
+  customer_curated:
+    upstream:
+      - customers
+      - customer_addresses
+      - customer_segments
+
+  product_curated:
+    upstream:
+      - products
+      - brands
+      - categories
+      - suppliers
+
+  inventory_curated:
+    upstream:
+      - inventory
+      - stock_movements
+      - warehouses
+
+  marketing_curated:
+    upstream:
+      - campaigns
+      - clicks
+      - impressions
+      - email_events
+
+  sales_curated:
+    upstream:
+      - orders
+      - order_items
+      - payments
+      - returns
+
+  finance_curated:
+    upstream:
+      - invoices
+      - refunds
+      - tax
+      - ledger
+
+  # =====================================
+  # L3 BUSINESS LAYER
+  # =====================================
+
+  dim_customer:
+    upstream:
+      - customer_curated
+
+  dim_product:
+    upstream:
+      - product_curated
+
+  dim_campaign:
+    upstream:
+      - marketing_curated
+
+  dim_date:
+    upstream: []
+
+  fact_orders:
+    upstream:
+      - sales_curated
+      - dim_customer
+
+  fact_sales:
+    upstream:
+      - fact_orders
+      - dim_product
+
+  fact_payments:
+    upstream:
+      - sales_curated
+
+  fact_returns:
+    upstream:
+      - sales_curated
+
+  customer_lifetime_value:
+    upstream:
+      - fact_sales
+      - dim_customer
+
+  campaign_roi:
+    upstream:
+      - fact_sales
+      - dim_campaign
+
+  daily_sales:
+    upstream:
+      - fact_sales
+
+  monthly_sales:
+    upstream:
+      - fact_sales
+
+  top_products:
+    upstream:
+      - fact_sales
+      - dim_product
