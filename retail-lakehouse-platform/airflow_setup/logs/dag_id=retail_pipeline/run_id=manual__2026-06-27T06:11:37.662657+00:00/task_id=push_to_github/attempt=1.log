@@ -15,3 +15,64 @@
 [2026-06-27T06:11:41.889+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
 [2026-06-27T06:11:41.889+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/AgenticAIwithDataENgineering\n\n        git add .\n\n        git commit -m "Auto refresh 2026-06-27 06:11:41.711627"\n\n        git push\n        ']
 [2026-06-27T06:11:41.892+0000] {subprocess.py:99} INFO - Output:
+[2026-06-27T06:11:42.230+0000] {subprocess.py:106} INFO - [main fdb5884] Auto refresh 2026-06-27 06:11:41.711627
+[2026-06-27T06:11:42.231+0000] {subprocess.py:106} INFO -  57 files changed, 127297 insertions(+), 6 deletions(-)
+[2026-06-27T06:11:42.231+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T05:55:51.348675+00:00/task_id=dq_decision/attempt=1.log
+[2026-06-27T06:11:42.231+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T05:55:51.348675+00:00/task_id=generate_data/attempt=1.log
+[2026-06-27T06:11:42.231+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T05:55:51.348675+00:00/task_id=github_fetch/attempt=1.log
+[2026-06-27T06:11:42.231+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T05:55:51.348675+00:00/task_id=l0_to_l1/attempt=1.log
+[2026-06-27T06:11:42.231+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T05:55:51.348675+00:00/task_id=l1_to_l2/attempt=1.log
+[2026-06-27T06:11:42.231+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T05:55:51.348675+00:00/task_id=l2_to_l3/attempt=1.log
+[2026-06-27T06:11:42.232+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T05:55:51.348675+00:00/task_id=landing_loader/attempt=1.log
+[2026-06-27T06:11:42.232+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T05:55:51.348675+00:00/task_id=push_to_github/attempt=1.log
+[2026-06-27T06:11:42.232+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T05:55:51.348675+00:00/task_id=raw_loader/attempt=1.log
+[2026-06-27T06:11:42.232+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T05:55:51.348675+00:00/task_id=run_dq/attempt=1.log
+[2026-06-27T06:11:42.232+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:04:56.565147+00:00/task_id=dq_decision/attempt=1.log
+[2026-06-27T06:11:42.232+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:04:56.565147+00:00/task_id=generate_data/attempt=1.log
+[2026-06-27T06:11:42.233+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:04:56.565147+00:00/task_id=github_fetch/attempt=1.log
+[2026-06-27T06:11:42.233+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:04:56.565147+00:00/task_id=l0_to_l1/attempt=1.log
+[2026-06-27T06:11:42.233+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:04:56.565147+00:00/task_id=l1_to_l2/attempt=1.log
+[2026-06-27T06:11:42.233+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:04:56.565147+00:00/task_id=l2_to_l3/attempt=1.log
+[2026-06-27T06:11:42.233+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:04:56.565147+00:00/task_id=landing_loader/attempt=1.log
+[2026-06-27T06:11:42.233+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:04:56.565147+00:00/task_id=push_to_github/attempt=1.log
+[2026-06-27T06:11:42.233+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:04:56.565147+00:00/task_id=raw_loader/attempt=1.log
+[2026-06-27T06:11:42.233+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:04:56.565147+00:00/task_id=run_dq/attempt=1.log
+[2026-06-27T06:11:42.233+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:08:08.405366+00:00/task_id=dq_decision/attempt=1.log
+[2026-06-27T06:11:42.234+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:08:08.405366+00:00/task_id=generate_data/attempt=1.log
+[2026-06-27T06:11:42.234+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:08:08.405366+00:00/task_id=github_fetch/attempt=1.log
+[2026-06-27T06:11:42.234+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:08:08.405366+00:00/task_id=l0_to_l1/attempt=1.log
+[2026-06-27T06:11:42.234+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:08:08.405366+00:00/task_id=l1_to_l2/attempt=1.log
+[2026-06-27T06:11:42.234+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:08:08.405366+00:00/task_id=l2_to_l3/attempt=1.log
+[2026-06-27T06:11:42.234+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:08:08.405366+00:00/task_id=landing_loader/attempt=1.log
+[2026-06-27T06:11:42.234+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:08:08.405366+00:00/task_id=push_to_github/attempt=1.log
+[2026-06-27T06:11:42.234+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:08:08.405366+00:00/task_id=raw_loader/attempt=1.log
+[2026-06-27T06:11:42.234+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:08:08.405366+00:00/task_id=run_dq/attempt=1.log
+[2026-06-27T06:11:42.234+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:11:37.662657+00:00/task_id=generate_data/attempt=1.log
+[2026-06-27T06:11:42.234+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/***_setup/logs/dag_id=retail_pipeline/run_id=manual__2026-06-27T06:11:37.662657+00:00/task_id=push_to_github/attempt=1.log
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_github/campaigns.json
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_github/clicks.csv
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_github/customer_addresses.json
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_github/customer_segments.json
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_github/customers.json
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_github/email_events.json
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_github/impressions.csv
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_local/brands.parquet
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_local/categories.parquet
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_local/invoices.parquet
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_local/ledger.parquet
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_local/order_items.csv
+[2026-06-27T06:11:42.235+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_local/orders.csv
+[2026-06-27T06:11:42.236+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_local/payments.csv
+[2026-06-27T06:11:42.236+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_local/products.parquet
+[2026-06-27T06:11:42.236+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_local/refunds.parquet
+[2026-06-27T06:11:42.236+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_local/returns.csv
+[2026-06-27T06:11:42.236+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_local/suppliers.parquet
+[2026-06-27T06:11:42.236+0000] {subprocess.py:106} INFO -  create mode 100644 retail-lakehouse-platform/data/source_local/tax.parquet
+[2026-06-27T06:11:46.714+0000] {subprocess.py:106} INFO - To github.com:kedarshiral/AgenticAIwithDataENgineering.git
+[2026-06-27T06:11:46.714+0000] {subprocess.py:106} INFO -    0002e24..fdb5884  main -> main
+[2026-06-27T06:11:46.717+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-06-27T06:11:46.737+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-06-27T06:11:46.738+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=retail_pipeline, task_id=push_to_github, run_id=manual__2026-06-27T06:11:37.662657+00:00, execution_date=20260627T061137, start_date=20260627T061141, end_date=20260627T061146
+[2026-06-27T06:11:46.786+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-06-27T06:11:46.802+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-27T06:11:46.803+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

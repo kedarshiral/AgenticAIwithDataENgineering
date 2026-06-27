@@ -1,7 +1,7 @@
 {
-    "customers": 250,
-    "products": 25,
-    "campaigns": 10,
-    "orders": 500,
-    "order_items": 1486
+    "customers": 300,
+    "products": 30,
+    "campaigns": 12,
+    "orders": 600,
+    "order_items": 1787
 }
